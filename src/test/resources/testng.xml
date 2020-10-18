@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tests" verbose="5">
+  <test name="Test1">
+    <parameter name="siteUrl" value="https://account.habr.com/register/"/>
+    <parameter name="email" value="luisfigo_10@mail.ru"/>
+    <parameter name="registeredEmail" value="figourist@mail.ru"/>
+    <parameter name="username" value="luisfigo_10"/>
+    <parameter name="pass" value="realmadrid"/>
+    <classes>
+      <class name="ru.comp.tests.HabrRegisterTest"/>
+    </classes>
+  </test>  
+</suite>
