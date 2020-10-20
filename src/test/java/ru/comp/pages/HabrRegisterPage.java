@@ -1,8 +1,6 @@
 package ru.comp.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.WebDriver;
-
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -18,10 +16,13 @@ public class HabrRegisterPage extends BasePage {
     private SelenideElement notARobotCheckbox = $(byXpath("//*[@id=\"recaptcha-anchor\"]/div[1]"));
     private SelenideElement submitButton = $(byXpath("//*[@id=\"registration_button\"]"));
 
-    public HabrRegisterPage(WebDriver webDriver) {
-        super(webDriver);
-        this.name = "Entries page";
-        this.coreElementXPath = "//h1[contains(text(), 'Выберите entry для изменения')]";
+    public SelenideElement ErrorMessage(String message) {
+        return $(byXpath("//*[@class=\'s-error\'][contains(text(), '" + message + "')]"));
+    }
+
+    public HabrRegisterPage() {
+        this.name = "Habr Register page";
+        this.coreElementXPath = "//div[contains(text(), 'Registration')]";
     }
 
     public void SendRegisterForm(String email, String username, String pass)
